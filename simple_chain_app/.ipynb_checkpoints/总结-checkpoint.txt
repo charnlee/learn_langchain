@@ -1,0 +1,6 @@
+1.通过ChatNVIDIA的API调用NVIDIA的大模型
+2.通过 | 构建chain，可以直接prompt|model|parser.
+3.通过langserve和fastapi部署model chain
+4.通过chain/playgroud可以有一个简单的内置UI供与chain互动。
+5.通过remoterunnable直接通过部署的网址直接进行Chain的使用。
+6.通过langsmith进行跟踪模型使用情况。
