@@ -1,0 +1,7 @@
+这一节主要是能让模型记住之前的会话，实现多轮对话功能。
+1.使用get_session_history将对话存储到会话字典里。
+2.字典中的键是session_id，值是会话内容，session_id就好比每个房间号，将对话房间区分开来。
+3.这节有三个API，
+BaseChatMessageHistory：是一个用于管理聊天消息历史记录的抽象基类，通过同步和异步方法提供了灵活的实现方式。实现者应根据需求覆盖这些方法，并优先使用批量操作方法以提高性能。
+InMemoryChatMessageHostory：是一个基于内存的聊天消息历史记录实现，通过继承 BaseChatMessageHistory 和 BaseModel，它提供了内存中存储、管理和操作聊天消息的功能，同时具备数据解析和验证能力。
+RunnableWithMessageHistory 是一个封装另一个 Runnable 的可运行对象，负责管理聊天消息历史记录。它通过读取和更新聊天消息历史记录来确保封装的 Runnable 正确工作。RunnableWithMessageHistory 需要一个包含 session_id 的配置参数来管理聊天消息历史记录，并支持通过自定义配置扩展其功能。在实验和生产环境中，可以分别使用内存实现和持久化实现来管理聊天消息历史记录。

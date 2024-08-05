@@ -1,0 +1,4 @@
+1.学习了怎么将文本嵌入到向量
+2.怎么建立vectorstore
+3.vectorstore不是runnable,但retriver是runnable。
+4.document,包含文本数据和元数据metadata
